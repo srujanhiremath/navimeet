@@ -1,5 +1,5 @@
 const CONFIG = {
-    GOOGLE_API_KEY: 'REMOVED_GOOGLE_API_KEY',
+    GOOGLE_API_KEY: 'Google_API_key',
     DEFAULT_CENTER: { lat: 12.9716, lng: 77.5946 },
     DEFAULT_ZOOM: 12,
     
