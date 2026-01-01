@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navimeet</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <aside id="sidebar">
+            <h1>Navimeet</h1>
+            
+            <div id="mode-selector">
+                <button data-mode="merge" class="active">Merge Point</button>
+                <button data-mode="diverge">Diverge Point</button>
+                <button data-mode="individual">Individual Route</button>
+            </div>
+
+            <div id="merge-panel" class="panel active">
+                <h3>Find Merge Point</h3>
+                <div id="participants-list"></div>
+                <button id="add-participant">+ Add Person</button>
+                <div class="destination-input">
+                    <label>Common Destination</label>
+                    <input type="text" id="destination" placeholder="Enter destination">
+                </div>
+                <button id="calculate-merge" class="primary">Calculate Merge Point</button>
+            </div>
+
+            <div id="diverge-panel" class="panel">
+                <h3>Find Diverge Point</h3>
+                <div class="origin-input">
+                    <label>Common Origin</label>
+                    <input type="text" id="origin" placeholder="Enter starting point">
+                </div>
+                <div id="destinations-list"></div>
+                <button id="add-destination">+ Add Destination</button>
+                <button id="calculate-diverge" class="primary">Calculate Diverge Point</button>
+            </div>
+
+            <div id="results-panel"></div>
+        </aside>
+
+        <main id="map"></main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/services/distanceMatrix.js"></script>
+    <script src="js/services/directions.js"></script>
+    <script src="js/services/places.js"></script>
+    <script src="js/algorithms/mergePoint.js"></script>
+    <script src="js/algorithms/divergePoint.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initApp"></script>
+</body>
+</html>
